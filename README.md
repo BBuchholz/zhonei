@@ -2,9 +2,13 @@
 
 ### In Progress
 
-currently working from AI generated instructions obtained through typing "python selenium unittest visual studio code tutorial" into Google Search, just created the repo and cloned it, need to create a virtual environment, install selenium, all that yet
+currently working from AI generated instructions obtained through typing "python selenium unittest visual studio code tutorial" into Google Search
+    
+    - created the empty repo on GitHub and cloned it, need to 
+    - created a virtual environment, 
+    - installed selenium with help from the AI prompts below
 
-# AI TEXT ORIGINAL
+# AI TEXT ORIGINAL - searched for "python selenium unittest visual studio code tutorial"
 
 A tutorial for setting up and running Python Selenium unittest tests in Visual Studio Code involves several steps: 
 1. Project Setup: 
@@ -77,4 +81,47 @@ A tutorial for setting up and running Python Selenium unittest tests in Visual S
 AI responses may include mistakes.
 
 [1] https://code.visualstudio.com/docs/python/python-tutorial
+
+# AI TEXT ORIGINAL - searched for "install selenium webdriver chrome python"
+
+To install Selenium WebDriver for Chrome in Python, follow these steps: install selenium. 
+Open your terminal or command prompt and install the Selenium library using pip: 
+    pip install selenium
+
+Install Webdriver Manager (Recommended). 
+This library automatically handles downloading and managing the correct ChromeDriver version for your installed Chrome browser. 
+    pip install webdriver-manager
+
+Use Selenium with ChromeDriver. 
+In your Python script, import the necessary modules and initialize the Chrome WebDriver using webdriver_manager: 
+    from selenium import webdriver
+    from selenium.webdriver.chrome.service import Service
+    from webdriver_manager.chrome import ChromeDriverManager
+
+    # Initialize the Chrome WebDriver, which will automatically download the correct driver
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+    # Now you can use the 'driver' object to interact with Chrome
+    driver.get("https://www.google.com")
+    print(driver.title)
+
+    # Close the browser when done
+    driver.quit()
+
+Alternative (Manual ChromeDriver Management): 
+If you prefer to manage ChromeDriver manually, you would need to: Download ChromeDriver. 
+Navigate to the official ChromeDriver downloads page (search for "ChromeDriver downloads") and download the version that matches your installed Google Chrome browser. Ensure you download the correct version for your operating system. Extract and Place ChromeDriver. 
+Extract the downloaded chromedriver.zip file and place the chromedriver executable in a location accessible by your system's PATH, or specify the full path to the executable in your Python script. Initialize WebDriver with Manual Path. 
+    from selenium import webdriver
+
+    # Replace 'path/to/your/chromedriver' with the actual path to the executable
+    driver = webdriver.Chrome(executable_path='path/to/your/chromedriver')
+
+    driver.get("https://www.google.com")
+    print(driver.title)
+    driver.quit()
+
+Using webdriver_manager is generally recommended as it simplifies the process by automatically handling ChromeDriver compatibility. 
+
+AI responses may include mistakes.
 
